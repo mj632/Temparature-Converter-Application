@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Conversion:"
+        android:textColor="#212121"
+        android:textColorLink="#FF5252"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/convertOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:checkedButton="@+id/f2cRadioBtn"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appTitle">
+
+        <RadioButton
+            android:id="@+id/f2cRadioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:onClick="selectUnit"
+            android:text="Fahrenheit to Celsius   "
+            android:textColor="#212121"
+            android:textColorLink="#FF5252"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/c2fRadioBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:onClick="selectUnit"
+            android:text="Celsius to Fahrenheit   "
+            android:textColor="#212121"
+            android:textColorLink="#FF5252"
+            android:textSize="14sp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:textAlignment="viewEnd"
+        android:textColor="#212121"
+        android:textColorLink="#FF5252"
+        app:layout_constraintBottom_toBottomOf="@+id/equalSign"
+        app:layout_constraintEnd_toStartOf="@+id/inputUnit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/equalSign"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/equalSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:text="="
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertOption" />
+
+    <TextView
+        android:id="@+id/outputText"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="viewEnd"
+        android:textColor="#212121"
+        android:textColorLink="#FF5252"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/equalSign"
+        app:layout_constraintEnd_toStartOf="@+id/outputUnit"
+        app:layout_constraintStart_toEndOf="@+id/equalSign"
+        app:layout_constraintTop_toTopOf="@+id/equalSign" />
+
+    <Button
+        android:id="@+id/convertBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="28dp"
+        android:background="#FF5252"
+        android:onClick="makeConversion"
+        android:text="Convert"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/equalSign" />
+
+    <TextView
+        android:id="@+id/historyView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:background="#2196F3"
+        android:scrollbars="vertical"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FF5252"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertBtn" />
+
+    <TextView
+        android:id="@+id/inputUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="°F"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/equalSign"
+        app:layout_constraintEnd_toStartOf="@+id/equalSign"
+        app:layout_constraintTop_toTopOf="@+id/equalSign" />
+
+    <TextView
+        android:id="@+id/outputUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="°C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/equalSign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/equalSign" />
+
+</android.support.constraint.ConstraintLayout>
